@@ -116,7 +116,7 @@ if __name__ == "__main__":
     path_weights = sys.argv[1]
     path_node_partition = sys.argv[2]
     path_edge_partition = sys.argv[3]
-    graph_id = sys.argv[4]
+
 
     nodes = pd.read_csv(path_node_partition , sep='\t', lineterminator='\n',header=None).loc[:,0:1433]
     nodes.set_index(0,inplace=True)
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     edges = pd.read_csv(path_edge_partition , sep='\s+', lineterminator='\n', header=None)
     edges.columns = ["source","target"] 
 
-    model = Model(nodes,edges,graph_id)
+    model = Model(nodes,edges)
     model.initialize()
 
     client = Client(model,weights_path=path_weights)

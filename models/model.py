@@ -15,13 +15,13 @@ import pandas as pd
 
 class Model:
 
-    def __init__(self,nodes,edges,graph_id):
+    def __init__(self,nodes,edges):
         self.model = None
 
         self.nodes =  nodes
         self.edges = edges
         self.graph = None
-        self.graph_id = graph_id
+
 
         self.train_flow = None
 
